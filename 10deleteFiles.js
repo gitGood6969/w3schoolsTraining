@@ -7,7 +7,7 @@ function deleteAFile(fs) {
 
 	fs.unlink(fileToBeDeleted, function (err) {
 		displayErrorMessageIfAny(err);
-		displayMessage("File deleted!");
+		displayMessage("File deleted!"); 
 	});
 }
 
