@@ -1,7 +1,10 @@
-// To nstall a package:
+// Website Link:
+// https://www.w3schools.com/nodejs/nodejs_npm.asp
+
+// To install a package:
 // npm install <name_of_package>
 
-// For this script we will use the "upper-case" package
+// For this script we will use the "upper-case" package:
 // npm install upper-case
 
 // When modules are installed, a "node_modules" folder is 
@@ -12,7 +15,7 @@ var upperCaseModule = initializeUpperCaseModule();
 
 httpModule.createServer(function (requestByUser, responseSentToUser) {
 
-    var message = "Hello World!";
+	var message = "Hello World!";
 	var messageInUpperCase = convertToUpperCase(message);
 
 	displayMessageInWebpage(messageInUpperCase, responseSentToUser);

@@ -1,4 +1,7 @@
-// Do run 8creatingFiles.js first before executing this script
+// Website Link:
+// https://www.w3schools.com/nodejs/nodejs_filesystem.asp
+
+// Run 8creatingFiles.js first before executing this script
 
 var fs = require("fs");
 

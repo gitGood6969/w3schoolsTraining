@@ -1,3 +1,6 @@
+// Link to website:
+// https://www.w3schools.com/nodejs/nodejs_uploadfiles.asp
+
 var fs = initializeFileSystemModule();
 
 function initializeFileSystemModule() {

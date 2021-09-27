@@ -1,3 +1,10 @@
+// Website Link:
+// https://www.w3schools.com/nodejs/nodejs_url.asp
+
+// To access the webpages, in a web browser type:
+// http://localhost:8080/summer.html
+// http://localhost:8080/winter.html
+
 var http = require("http");
 var url = require("url");
 var fs = require("fs");
