@@ -1,26 +1,11 @@
 // Link to website:
 // https://www.w3schools.com/nodejs/nodejs_mysql.asp
 
-// This script requires MySQL Database to be installed before hand.
-// You can find the installation details at the following link:
-// https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04
+// Refer to 1createConnection.js for installation 
+// and operation instructions
 
-// Do ensure that when creating the user, 
-// they are identified with "mysql_native_password" 
-// or you might get authentication errors.
-
-// To check if MySQL is running:
-// systemctl status mysql.service
-
-// To start MySQL (if its not running):
-// sudo systemctl start mysql
-
-// To stop MySQL from auto-starting upon bootup:
-// sudo systemctl disable mysql
-
-// It also requires the MySQL Driver/Module to establish 
-// connection to the database.
-// npm install mysql
+// This script will not execute properly unless you add the
+// appropriate "valid" sql query.
 
 var mysql = initializeMySqlModule();
 
@@ -31,8 +16,10 @@ var loginCredentials = {
 };
 
 var connection = configureConnectionToMysqlUsingLoginCredentials(mysql, loginCredentials);
-
 establishConnectionToMysqlDb(connection);
+
+var sqlQuery = "Put SQL Query here!"; // Change Query to a "Valid" one.
+executeSqlQueryUsingConnectionToMysqlDb(sqlQuery, connection);
 //=====================================================
 function initializeMySqlModule() {
 	return require("mysql");
@@ -59,3 +46,15 @@ function displayConnectionSuccessMessage() {
 	console.log("Connected!");
 }
 
+function executeSqlQueryUsingConnectionToMysqlDb(sqlQuery, connection) {
+	connection.query(sqlQuery, postSqlQueryHandler);
+}
+
+function postSqlQueryHandler (error, result) {
+	displayErrorsIfAny(error);
+	displayResultOfSqlQuery(result);
+}
+
+function displayResultOfSqlQuery(result) {
+	console.log("Result: " + result);
+}
